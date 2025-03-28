@@ -1,4 +1,7 @@
 ---
+import Enlaces from "../enlaces.astro";
+import EnlacesButton from "../../../public/icons/EnlacesButton.astro";
+import Github from "../../../public/icons/Github.astro";
 interface Tag {
   name: string;
   class: string;
@@ -26,7 +29,7 @@ const { title, description, image, link, github, tags } = Astro.props;
     <ul class="tags">
       {
         tags.map((tag: Tag) => (
-          <li >
+          <li>
             <span class={tag.class}>
               <tag.icon />
               {tag.name}
@@ -40,38 +43,54 @@ const { title, description, image, link, github, tags } = Astro.props;
     <p>{description}</p>
 
     <footer>
-      <a href={link} target="_blank" >Ver proyecto</a>
-      {github && <a href={github} target="_blank">Ver código</a>}
+      {
+        github && (
+          <Enlaces href={github}>
+            <Github />
+            Code
+          </Enlaces>
+        )
+      }
+      {
+        link && (
+          <Enlaces href={link}>
+            <EnlacesButton />
+            Preview
+          </Enlaces>
+        )
+      }
     </footer>
   </div>
-
 </article>
 
 <style>
-
   .card {
+    background-color: var(--background-600);
+    border: 1px solid var(--background-500);
+    border-radius: 24px;
+    padding: 1.4rem;
+    transition: 0.3s ease-in-out;
 
-    backdrop-filter: bluer(10px);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
-    .card-header  {
-      border-radius: 10px 10px 0 0;
+    .card-header {
+      border-radius;
       overflow: hidden;
       position: relative;
+      margin-bottom: 1.4rem;
 
       img {
         display: block;
         width: 100%;
-        height: auto;
         object-fit: cover;
+        transition: 0.3s ease-in-out;
+        border-radius: 16px;
       }
+    }
+    &:hover {
+      background-color: var(--background-500);
     }
 
     .card-content {
-      padding: 1rem;
-      background-color: var(--background-600);
-      border-radius:0 0 10px 10px;
 
       h1 {
         font-size: 2rem;
@@ -86,62 +105,57 @@ const { title, description, image, link, github, tags } = Astro.props;
       }
     }
 
-    
-
+    footer {
+      display: flex;
+      gap: 1rem;
+    }
   }
 
   .tags {
-  margin-bottom: 1rem;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  gap: 0.75rem; /* Slightly reduced for better spacing */
-  padding: 0;
-}
+    margin-bottom: 1rem;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0;
+  }
 
-.tags li {
-  /* Prevent shrinking of tags */
-  flex-shrink: 0;
-}
+  .tags li span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+  }
 
-.tags li span {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.25rem 0.75rem; /* Slightly more horizontal padding */
-  font-size: 0.75rem;
-  border-radius: 9999px;
-  font-weight: 500; /* Medium weight for better readability */
-  transition: all 0.2s ease; /* Smooth transition for hover effects */
-}
+  .tags li span svg {
+    width: 1rem;
+    height: 1rem;
+  }
 
-.tags li span svg {
-  width: 1rem;
-  height: 1rem;
-}
+  .tags li .css {
+    background-color: #2b437a;
+    color: white;
+    box-shadow: 0 1px 2px rgba(41, 101, 241, 0.3);
 
-.tags li .css {
-  background-color: #2b437a;
-  color: white;
-  box-shadow: 0 1px 2px rgba(41, 101, 241, 0.3);
-}
+    &:hover {
+      background-color: #0a4bda;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(41, 101, 241, 0.4);
+    }
+  }
 
-.tags li .css:hover {
-  background-color: #0a4bda; 
-  transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(41, 101, 241, 0.4);
-}
+  .tags li .NextJS {
+    background-color: #000000;
+    color: white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 
-.tags li .NextJS {
-  background-color: #000000;
-  color: white;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.tags li .NextJS:hover {
-  background-color: #333333; /* Slightly lighter on hover */
-  transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
+    &:hover {
+      background-color: #141414; /* Slightly lighter on hover */
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+  }
 </style>

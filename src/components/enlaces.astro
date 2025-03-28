@@ -1,0 +1,31 @@
+---
+const { href } = Astro.props;
+---
+
+<a class="enlaces" href={href} target="_blank" role="link"> <slot /> </a>
+
+<style is:inline>
+.enlaces {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 9999px;
+
+    border: 1px solid rgb(80, 90, 100);
+    color: var(--text-700);
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    svg {
+        width: 1.15rem;
+        height: 1.15rem;
+    }
+
+    &:hover {
+      background-color: var(--background-600);
+        color: var(--color-theme-primary);
+    }
+}
+
+</style>

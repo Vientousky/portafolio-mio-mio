@@ -1,109 +1,103 @@
 ---
+import Enlaces from "./enlaces.astro";
+import Github from "../../public/icons/Github.astro";
+import Linkedin from "../../public/icons/LinkedIn.astro";
 
+const LINK = [
+  { name: "GitHub", url: "https://github.com/tuusuario" },
+  { name: "LinkedIn", url: "https://linkedin.com/in/tuusuario" },
+];
 ---
 
 <section class="welcome">
+  <div class="container">
+    <article class="presentation">
+      <h3>Desarrollador <strong>Frond End</strong></h3>
+      <h1>!Buenas Buenas¡ Soy <strong>Jose David Mancuello</strong></h1>
+      <p>
+        Me gusta aprender cosas nuevas, me gusta la tecnología y me gusta
+        compartir lo que aprendo.
+      </p>
 
-    <div class="container">
+      <div class="social">
+        <a class="enlaces" href="">Descargar sv</a>
 
-        <article class="presentation">
-            <h3>Desarrollador <strong>Frond End</strong></h3>
-            <h1>!Buenas Buenas¡ Soy <strong>Jose David Mancuello</strong> </h1>
-            <p>Me gusta aprender cosas nuevas, me gusta la tecnología y me gusta compartir lo que aprendo.</p>
+        <Enlaces href={LINK[0].url}>
+          <Github />
+          GitHub
+        </Enlaces>
 
-            <div class="social">
-                <a href="https://www.linkedin.com/in/mancuello/" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://github.com/Vientousky">Github</a>
+        <Enlaces href={LINK[1].url}>
+          <Linkedin />
+          LinkedIn
+        </Enlaces>
+      </div>
+    </article>
 
-                <a href="https://www.instagram.com/vientousky/">Intagram</a>
-                <a href="https://www.facebook.com/profile.php?id=61563499826060">Facebook</a>
-
-            </div>
-
-        </article>
-    
-        <figure class="avatar">
-            <img src="/img/official.jpeg" alt="Jose Mancuello" />
-        </figure>
-
-    </div>
-
+    <figure class="avatar">
+      <img src="/img/official.jpeg" alt="Jose Mancuello" />
+    </figure>
+  </div>
 </section>
 
 <style>
+  .welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+  }
 
-    .welcome {
+  .container {
+    display: flex;
+    flex-direction: row;
+
+    .presentation {
+      max-width: 60%;
+      flex: 0 0 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
+
+      strong {
+        color: var(--color-theme-primary);
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        line-height: 1.6;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+
+      .social {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+        gap: 1.25rem;
+      }
     }
 
-    .container {
-        display: flex;
-        flex-direction: row;
-
-        .presentation {
-            max-width: 60%;
-            flex: 0 0 60%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            h1 {
-                font-size: 2.5rem;
-                line-height: 1.2;
-                margin-bottom: 1rem;
-            }
-
-            strong {
-                color: var(--color-theme-primary);
-            }
-
-            h3 {
-                font-size: 1.5rem;
-                line-height: 1.2;
-                margin-bottom: 1rem;
-            }
-
-            p {
-                line-height: 1.6;
-                font-size: 1.2rem;
-                margin-bottom: 1rem;
-            }
-
-            .social {
-                display: flex;
-                gap: 1.25rem;
-                a {
-                    padding: 0.5rem 1rem;
-                    background-color: #35416385;
-                    backdrop-filter: blur(10px);
-                    color: white;
-                    border-radius: 9999px;
-                    text-decoration: none;
-                    transition: background-color 0.3s;
-                    &:hover {
-                        background-color: var(--color-theme-secondary);
-                    }
-                }
-            }
-
-        }
-
-        .avatar {
-            max-width: 40%;
-            flex: 0  40%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            img {
-                width: 300px;
-                height: 300px;
-                border-radius: 16px;
-            }
-        }
-
-    } 
-
+    .avatar {
+      max-width: 40%;
+      flex: 0 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 300px;
+        height: 300px;
+        border-radius: 16px;
+      }
+    }
+  }
 </style>
