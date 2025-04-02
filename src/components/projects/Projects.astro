@@ -3,52 +3,49 @@ import ProjectCard from "./ProjectsCard.astro";
 import { TARGS } from "../Technology.astro";
 
 const PROJECTS = [
-    {
-        title: "EES N59 - Colegio Del Centenario",
-        description: "Diseñado para facilitar la comunicación entre los padres de familia y el colegio.",
-        image: "/img/ees.png",
-        link: "https://ees-n59.vercel.app/",
-        github: "https://github.com/Vientousky/bachi_73",
-        tags: [TARGS.NextJS, TARGS.CSS]
-    },
-    {
-        title: "EES N59 - Colegio Del Centenario",
-        description: "Diseñado para facilitar la comunicación entre los padres de familia y el colegio.",
-        image: "/img/ees.png",
-        link: "https://ees-n59.vercel.app/",
-        github: "https://github.com/Vientousky/bachi_73",
-        tags: [TARGS.NextJS, TARGS.CSS]
-    },
-    
+  {
+    title: "EES N59 - Colegio Del Centenario",
+    description:
+      "Diseñado para facilitar la comunicación entre los padres de familia y el colegio.",
+    image: "/img/ees.png",
+    link: "https://ees-n59.vercel.app/",
+    github: "https://github.com/Vientousky/bachi_73",
+    tags: [TARGS.NextJS, TARGS.CSS],
+  },
+  {
+    title: "EES N59 - Colegio Del Centenario",
+    description:
+      "Diseñado para facilitar la comunicación entre los padres de familia y el colegio.",
+    image: "/img/ees.png",
+    link: "https://ees-n59.vercel.app/",
+    github: "https://github.com/Vientousky/bachi_73",
+    tags: [TARGS.NextJS, TARGS.CSS],
+  },
 ];
 ---
 
 <section class="container">
-    <h1 class="titulo" >Mis Proyectos</h1>
-    <div class="projects">
-        {PROJECTS.map(project => (
-            <ProjectCard {...project} />
-        ))}
-    </div>
+  <h1 class="titulo">Mis Proyectos</h1>
+  <div class="projects">
+    {PROJECTS.map((project) => <ProjectCard {...project} />)}
+  </div>
 </section>
 
 <style>
+  .container {
+    min-height: 50vh;
+    padding: 3rem 0;
 
-    .container {
-        min-height: 50vh;
-        padding: 3rem 0;
-
-        .titulo {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2.8rem;
-        }
+    .titulo {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.8rem;
     }
+  }
 
-    .projects {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 2rem;
-    }
-
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
 </style>
