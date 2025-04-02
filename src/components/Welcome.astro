@@ -1,41 +1,41 @@
 ---
 import Enlaces from "./enlaces.astro";
-import Github from "../../public/icons/Github.astro";
-import Linkedin from "../../public/icons/LinkedIn.astro";
+import LinkedIn from "../icons/networks/LinkedIn.astro";
+import Github from "../icons/networks/Github.astro";
 
 const LINK = [
-  { name: "GitHub", url: "https://github.com/tuusuario" },
-  { name: "LinkedIn", url: "https://linkedin.com/in/tuusuario" },
+  { name: "GitHub", url: "/https://github.com/Vientousky" },
+  { name: "LinkedIn", url: "/https://linkedin.com/in/tuusuario" },
 ];
 ---
 
 <section class="welcome">
-  <div class="container">
-    <article class="presentation">
-      <h3>Desarrollador <strong>Frond End</strong></h3>
-      <h1>!Buenas Buenas¡ Soy <strong>Jose David Mancuello</strong></h1>
-      <p>
-        Me gusta aprender cosas nuevas, me gusta la tecnología y me gusta
-        compartir lo que aprendo.
-      </p>
+  <article class="presentation">
+    <h3>Desarrollador <strong>Front End</strong></h3>
+    <h1>!Buenas Buenas¡ Soy <strong>Jose David Mancuello</strong></h1>
+    <p>
+      Soy una persona bastante reservado con lo que suelo decir, pero soy muy
+      amigable aunque mi cara dija todo lo contrario , siempre me gusto la
+      programacion 
+    </p>
 
-      <div class="social">
-        <a class="enlaces" href="">Descargar CV</a>
+    <div class="social">
+      <a class="enlaces" href="/" title="cv">Descargar CV</a>
 
-        <Enlaces href={LINK[0].url}>
-          <Github />
-        </Enlaces>
+      <Enlaces href={LINK[0].url} arial={LINK[0].url} >
+        <Github />
+        
+      </Enlaces>
 
-        <Enlaces href={LINK[1].url}>
-          <Linkedin />
-        </Enlaces>
-      </div>
-    </article>
+      <Enlaces href={LINK[1].url} arial={LINK[1].url}>
+        <LinkedIn />
+      </Enlaces>
+    </div>
+  </article>
 
-    <figure class="avatar">
-      <img src="/img/official.jpeg" alt="Jose Mancuello" />
-    </figure>
-  </div>
+  <figure class="avatar">
+    <img src="/img/official.jpeg" alt="Jose Mancuello" />
+  </figure>
 </section>
 
 <style>
@@ -43,39 +43,39 @@ const LINK = [
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
-  }
-
-  .container {
-    display: flex;
-    flex-direction: row;
+    gap: 2rem;
+    padding: 5rem 0;
 
     .presentation {
-      max-width: 60%;
-      flex: 0 0 60%;
+      max-width: 55%;
+      flex: 0 0 55%;
+
       display: flex;
       flex-direction: column;
-      justify-content: center;
 
       h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
         line-height: 1.2;
         margin-bottom: 1rem;
       }
 
       strong {
         color: var(--color-theme-primary);
+        text-shadow: 2px 2px 10px rgba(175, 128, 255, 0.3);
+
       }
 
       h3 {
         font-size: 1.5rem;
         line-height: 1.2;
         margin-bottom: 1rem;
+        color: var(--color-theme-secondary);
       }
 
       p {
+        color: var(--text-500);
         line-height: 1.6;
-        font-size: 1.2rem;
+        font-size: 1.15rem;
         margin-bottom: 1rem;
       }
 
@@ -86,14 +86,11 @@ const LINK = [
     }
 
     .avatar {
-      max-width: 40%;
-      flex: 0 40%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      max-width: 45%;
+      flex: 0 45%;
       img {
-        width: 300px;
-        height: 300px;
+        width: 100%;
+        height: auto;
         border-radius: 16px;
       }
     }

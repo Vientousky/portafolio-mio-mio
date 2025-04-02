@@ -1,8 +1,8 @@
 ---
-const { href } = Astro.props;
+const { href, arial } = Astro.props;
 ---
 
-<a class="enlaces" href={href} target="_blank" role="link"> <slot /> </a>
+<a class="enlaces" href={href} target="_blank" role="link" aria-label={arial} > <slot /> </a>
 
 <style is:inline>
 .enlaces {
@@ -12,8 +12,8 @@ const { href } = Astro.props;
     padding: 6px 12px;
     border-radius: 9999px;
 
-    border: 1px solid rgb(80, 90, 100);
-    color: var(--text-700);
+    border: 1px solid var(--button-br);
+    color: var(--text-600);
     text-decoration: none;
     transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
 
@@ -23,8 +23,8 @@ const { href } = Astro.props;
     }
 
     &:hover {
-      background-color: var(--background-600);
-        color: var(--color-theme-primary);
+    color: var(--color-theme-primary);
+    border: 1px solid var(--color-theme-primary);
     }
 }
 

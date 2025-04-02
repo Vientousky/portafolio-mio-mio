@@ -1,0 +1,85 @@
+<section class="SobreMi">
+  <h1 class="titulo">Sobre mi</h1>
+
+  <div class="cotenedor">
+    <p class="precentacion">
+      Bienvenido. Mi apodo es <strong>Josecito</strong>. Comencé en la
+      programación allá por el 2022 gracias a mi primo, que siempre me decía que
+      le metiera ganas a este mundo. Gracias a eso, ya llevo casi <strong>3 años</strong> en la programación web.
+    </p>
+
+    <p class="precentacion">
+      Aunque aún tengo dificultades en algunas cosas, no le tengo miedo a lo
+      desconocido y aprendo día a día con mis códigos personales. ¡La práctica
+      ayuda mucho!
+    </p>
+
+    <article class="stats">
+      <div class="card">
+        <h1>10<strong>+</strong></h1>
+        <p>Proyectos realizados</p>
+      </div>
+
+      <div class="card">
+        <h1>3<strong>+</strong></h1>
+        <p>Años de experiencias</p>
+      </div>
+
+      <div class="card">
+        <h1>8<strong>+</strong></h1>
+        <p>Proyectos personales</p>
+      </div>
+
+      <div class="card">
+        <h1>2<strong></strong></h1>
+        <p>Clientes Totales</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<style>
+    .SobreMi {
+        min-height: 40vh;
+        padding: 3.5rem 0;
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 3rem;
+        }
+    }
+
+    .cotenedor {
+        background-color: rgba(16, 19, 29, 0.685);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgb(60, 66, 90);
+        border-radius: 24px;
+        padding: 1.6rem;
+
+        .precentacion {
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+        }
+
+        .stats {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+
+            h1 {
+                font-size: 2.8rem; 
+                text-align: center;
+            }
+
+            strong {
+                color: var(--color-theme-primary);
+            }
+
+            p {
+                color: var(--text-500);
+            }
+        }
+    }
+</style>
